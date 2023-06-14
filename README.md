@@ -28,11 +28,24 @@ INSERT INTO coordenadas (latitud,longitud,campo1,campo2) VALUES ('-123.123','-32
 INSERT INTO app_users (username,email,password,role) 
 VALUES ('admin','','$2a$12$ocxZm5QGeP/0IagvB2fGLOWwb7Gm3ITnKdnCf9s4XsDMUvFl4R8Ci','admin');
 
-# El backend no está dockerizado pero se hizo build con Maven
-# se puede compilar desde INTELLIJ con java 17 +
-# o ejecutar el jar dentro del a carpeta target
+
+# Cómo ejecutar
+
+El backend no está dockerizado pero se hizo build con Maven
+se puede compilar desde INTELLIJ con java 17 +
+o ejecutar el jar dentro del a carpeta target
 
 java -jar fullstacktest-0.0.1-SNAPSHOT.jar
 
 
 # Test unitarios en la carpeta de src/test
+
+# El frontend
+
+El frontend sí está dockerizado y se puede ejecutar construyendo y corriendo las imágenes
+
+docker build –t angular-frontend .
+
+docker run –d –p 4200:80 angular-frontend
+
+Usuario y contraseña del frontend: admin
